@@ -11,6 +11,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/Signup";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
+import HotelBooking from "./components/HotelBooking";
 
 // Loading component for a better user experience
 const Loading = () => (
@@ -101,6 +102,8 @@ function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/navbar" element={<Navbar />} />
+        <Route path="/hotelbooking" element={<HotelBooking />} />
+
 
 
         {/* Fallback route to redirect any invalid URL */}
