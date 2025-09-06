@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { MapPin, Star, Wifi, Car, Coffee, Utensils, Waves, Dumbbell, Heart, Phone, Mail, Calendar, Users, Clock, AlertCircle, Search, Filter, X } from "lucide-react";
 
 // Helper function to format dates to YYYY-MM-DD
@@ -394,6 +395,7 @@ export default function HotelBooking() {
 
   // Mobile filter component
   const MobileFilters = () => (
+    
     <div className={`fixed inset-0 bg-black bg-opacity-50 z-50 ${showMobileFilters ? 'block' : 'hidden'} lg:hidden`}>
       <div className="absolute right-0 top-0 h-full w-80 bg-white shadow-xl overflow-y-auto">
         <div className="p-6">
@@ -406,6 +408,7 @@ export default function HotelBooking() {
               <X className="h-5 w-5" />
             </button>
           </div>
+          
           
           {/* Price Range */}
           <div className="mb-6">
@@ -446,6 +449,8 @@ export default function HotelBooking() {
               ))}
             </div>
           </div>
+
+            
           
           {/* Hotel Type */}
           <div className="mb-6">

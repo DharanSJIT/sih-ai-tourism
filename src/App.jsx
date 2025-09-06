@@ -12,6 +12,7 @@ import SignUp from "./pages/Signup";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
 import HotelBooking from "./components/HotelBooking";
+import Transportation from './components/Transportation';
 
 // Loading component for a better user experience
 const Loading = () => (
@@ -103,6 +104,9 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/navbar" element={<Navbar />} />
         <Route path="/hotelbooking" element={<HotelBooking />} />
+        <Route path="/hotelbooking" element={<HotelBooking />} />
+        <Route path="/transportation" element={<Transportation />} />
+
 
 
 
