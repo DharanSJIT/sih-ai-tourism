@@ -8,7 +8,7 @@ import { auth } from "./firebase";
 // Import your page and component files
 import Welcome from "./pages/Welcome";
 import Login from "./pages/Login";
-import SignUp from "./pages/SignUp";
+import SignUp from "./pages/Signup";
 import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
 

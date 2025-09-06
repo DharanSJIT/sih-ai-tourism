@@ -8,6 +8,101 @@ export default function Dashboard() {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
 
+  // Array of features to be displayed as cards
+  // This makes the dashboard easily scalable and maintainable
+  const features = [
+    {
+      icon: "🗺️",
+      title: "AI Itinerary Planner",
+      description: "Craft your perfect trip with intelligent suggestions.",
+      buttonText: "Plan Now",
+      theme: {
+        from: "from-blue-50",
+        to: "to-blue-100",
+        border: "border-blue-200",
+        titleText: "text-blue-700",
+        descText: "text-blue-600",
+        buttonBg: "bg-blue-600",
+        buttonHover: "hover:bg-blue-700",
+      },
+    },
+    {
+      icon: "🏨",
+      title: "Hotel Booking",
+      description: "Find and book the best stays for your journey.",
+      buttonText: "Book a Stay",
+      theme: {
+        from: "from-indigo-50",
+        to: "to-indigo-100",
+        border: "border-indigo-200",
+        titleText: "text-indigo-700",
+        descText: "text-indigo-600",
+        buttonBg: "bg-indigo-600",
+        buttonHover: "hover:bg-indigo-700",
+      },
+    },
+    {
+      icon: "✈️",
+      title: "Transportation",
+      description: "Arrange flights, trains, and car rentals with ease.",
+      buttonText: "Get Moving",
+      theme: {
+        from: "from-sky-50",
+        to: "to-sky-100",
+        border: "border-sky-200",
+        titleText: "text-sky-700",
+        descText: "text-sky-600",
+        buttonBg: "bg-sky-600",
+        buttonHover: "hover:bg-sky-700",
+      },
+    },
+    {
+      icon: "🏘️",
+      title: "Street Preview",
+      description: "Virtually explore your destination before you arrive.",
+      buttonText: "Start Exploring",
+      theme: {
+        from: "from-teal-50",
+        to: "to-teal-100",
+        border: "border-teal-200",
+        titleText: "text-teal-700",
+        descText: "text-teal-600",
+        buttonBg: "bg-teal-600",
+        buttonHover: "hover:bg-teal-700",
+      },
+    },
+    {
+      icon: "⭐",
+      title: "Feedback",
+      description: "Share your travel experiences to help others.",
+      buttonText: "Leave Review",
+      theme: {
+        from: "from-amber-50",
+        to: "to-amber-100",
+        border: "border-amber-200",
+        titleText: "text-amber-700",
+        descText: "text-amber-600",
+        buttonBg: "bg-amber-600",
+        buttonHover: "hover:bg-amber-700",
+      },
+    },
+    {
+      icon: "🛍️",
+      title: "Marketplace",
+      description: "Shop for travel essentials and local goods.",
+      buttonText: "Go Shopping",
+      theme: {
+        from: "from-rose-50",
+        to: "to-rose-100",
+        border: "border-rose-200",
+        titleText: "text-rose-700",
+        descText: "text-rose-600",
+        buttonBg: "bg-rose-600",
+        buttonHover: "hover:bg-rose-700",
+      },
+    },
+  ];
+
   const handleSignOut = async () => {
     try {
       await signOut(auth);
@@ -18,20 +113,19 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-blue-50 p-4 absolute top-[8vh] w-full max-h-[92vh]">
-      <div className="max-w-6xl mx-auto">
-        {/* Header */}
-        
-
-        {/* Main Dashboard Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 to-blue-50 p-4 absolute top-[8vh] w-full max-h-[92vh] overflow-y-auto">
+      <div className="max-w-7xl mx-auto">
+        {/* Header Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           {/* Welcome Card */}
           <div className="lg:col-span-2 bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-blue-200/50">
             <h2 className="text-3xl font-bold text-slate-800 mb-4">
-              🎉 Ready for Your Next Adventure?
+              🎉 Ready for Your Next Adventure,{" "}
+              {user ? user.displayName?.split(" ")[0] : "Explorer"}?
             </h2>
             <p className="text-slate-600 mb-6 text-lg">
-              Your AI-powered travel planning journey starts here. Let's create unforgettable experiences tailored just for you.
+              Your AI-powered travel planning journey starts here. Let's create
+              unforgettable experiences tailored just for you.
             </p>
             <button className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-xl font-bold hover:from-blue-700 hover:to-teal-700 transition shadow-lg">
               Start Planning Your Trip ✈️
@@ -40,7 +134,9 @@ export default function Dashboard() {
 
           {/* Quick Stats */}
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-teal-200/50">
-            <h3 className="text-xl font-bold text-slate-800 mb-4">Your Travel Stats</h3>
+            <h3 className="text-xl font-bold text-slate-800 mb-4">
+              Your Travel Stats
+            </h3>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
                 <span className="text-slate-600">Trips Planned</span>
@@ -51,41 +147,36 @@ export default function Dashboard() {
                 <span className="font-bold text-teal-600">0</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-slate-600">AI Recommendations</span>
-                <span className="font-bold text-orange-600">Ready</span>
+                <span className="text-slate-600">Bookings Made</span>
+                <span className="font-bold text-indigo-600">0</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-6 shadow-lg border border-blue-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="text-4xl mb-4">🗺️</div>
-            <h3 className="font-bold text-blue-700 mb-2 text-xl">Smart Itinerary</h3>
-            <p className="text-blue-600 mb-4">Create personalized travel plans with AI assistance</p>
-            <button className="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition font-semibold">
-              Plan Now
-            </button>
-          </div>
-
-          <div className="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-6 shadow-lg border border-teal-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="text-4xl mb-4">💬</div>
-            <h3 className="font-bold text-teal-700 mb-2 text-xl">AI Assistant</h3>
-            <p className="text-teal-600 mb-4">Get instant travel advice and recommendations</p>
-            <button className="w-full bg-teal-600 text-white py-3 rounded-xl hover:bg-teal-700 transition font-semibold">
-              Chat Now
-            </button>
-          </div>
-
-          <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-2xl p-6 shadow-lg border border-orange-200 hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-            <div className="text-4xl mb-4">🏖️</div>
-            <h3 className="font-bold text-orange-700 mb-2 text-xl">Explore</h3>
-            <p className="text-orange-600 mb-4">Discover amazing destinations and hidden gems</p>
-            <button className="w-full bg-orange-600 text-white py-3 rounded-xl hover:bg-orange-700 transition font-semibold">
-              Explore
-            </button>
-          </div>
+        {/* Feature Cards Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className={`bg-gradient-to-br ${feature.theme.from} ${feature.theme.to} rounded-2xl p-6 shadow-lg border ${feature.theme.border} hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 flex flex-col`}
+            >
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3
+                className={`font-bold ${feature.theme.titleText} mb-2 text-xl`}
+              >
+                {feature.title}
+              </h3>
+              <p className={`${feature.theme.descText} mb-4 flex-grow`}>
+                {feature.description}
+              </p>
+              <button
+                className={`w-full ${feature.theme.buttonBg} text-white py-3 rounded-xl ${feature.theme.buttonHover} transition font-semibold mt-auto`}
+              >
+                {feature.buttonText}
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </div>
