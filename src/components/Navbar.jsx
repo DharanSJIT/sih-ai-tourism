@@ -82,10 +82,7 @@ export default function Navbar() {
     alert('Settings page coming soon!');
   };
 
-  // Don't show navbar on login and signup pages for cleaner design
-  if (location.pathname === '/login' || location.pathname === '/signup') {
-    return null;
-  }
+  // Show navbar on all pages
 
   // Show loading state
   if (loading) {
