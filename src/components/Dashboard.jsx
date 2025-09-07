@@ -97,6 +97,7 @@ export default function Dashboard() {
       title: "Marketplace",
       description: "Shop for travel essentials and local goods.",
       buttonText: "Go Shopping",
+      route: "/marketplace",
       // No route specified
       theme: {
         from: "from-rose-50",
