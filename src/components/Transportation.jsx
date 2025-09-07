@@ -894,7 +894,7 @@ const Transportation = () => {
         <div className="absolute -bottom-32 left-1/2 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
       </div>
 
-      <div className="relative z-10 p-4 sm:p-8 max-h-[92vh]">
+      <div className="relative z-10 p-4 sm:p-8">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <header className="text-center mb-12 pt-[7vh]">
