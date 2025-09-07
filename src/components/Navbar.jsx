@@ -112,7 +112,7 @@ export default function Navbar() {
         onClick={handleLogoClick}
         className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent hover:scale-105 transition-transform duration-300"
       >
-        ✈️ Trip Planner AI
+         Trip Planner AI
       </button>
 
       {/* Navigation Links (only show when user is authenticated) */}
