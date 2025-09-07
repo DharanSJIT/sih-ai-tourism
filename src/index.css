@@ -19,8 +19,7 @@ body {
   display: none;
 }
 
-/* Custom Scrollbar for the itinerary display */
-.custom-scrollbar::-webkit-scrollbar {
+/* .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
 
@@ -38,7 +37,7 @@ body {
   background: rgba(129, 140, 248, 0.8);
 }
 
-/* Keyframe Animations */
+
 @keyframes gradient-x {
   0%, 100% {
     background-size: 200% 200%;
@@ -77,7 +76,7 @@ body {
 }
 
 
-/* Add animation classes to Tailwind's utility classes */
+
 @layer utilities {
   .animate-gradient-x {
     animation: gradient-x 15s ease infinite;
@@ -88,4 +87,4 @@ body {
   .animate-fly {
     animation: fly 3s ease-in-out infinite;
   }
-}
+} */
