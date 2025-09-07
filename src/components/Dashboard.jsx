@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../firebase";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const navigate = useNavigate();
@@ -132,9 +133,11 @@ export default function Dashboard() {
               Your AI-powered travel planning journey starts here. Let's create
               unforgettable experiences tailored just for you.
             </p>
-            <button className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-xl font-bold hover:from-blue-700 hover:to-teal-700 transition shadow-lg">
-              Start Planning Your Trip ✈️
-            </button>
+            <Link to="/planner">
+              <button className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-xl font-bold hover:from-blue-700 hover:to-teal-700 transition shadow-lg">
+                Start Planning Your Trip ✈️
+              </button>
+            </Link>
           </div>
 
           {/* Quick Stats */}
