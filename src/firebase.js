@@ -2,15 +2,18 @@
 
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getDatabase } from "firebase/database";
 
-// Firebase configuration using environment variables
+// Firebase configuration
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
+  apiKey: "AIzaSyDdw5-j1B_xrcfQnvoC1zwthvQCIX375io",
+  authDomain: "travel-app-6ee13.firebaseapp.com",
+  databaseURL: "https://travel-app-6ee13-default-rtdb.firebaseio.com",
+  projectId: "travel-app-6ee13",
+  storageBucket: "travel-app-6ee13.firebasestorage.app",
+  messagingSenderId: "179174881641",
+  appId: "1:179174881641:web:b7a31af675fdfb6e8365f8",
+  measurementId: "G-L8FSLQ152R"
 };
 
 // Initialize Firebase
@@ -20,4 +23,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-export { auth, googleProvider };
+// Initialize Realtime Database
+const db = getDatabase(app);
+
+export { auth, googleProvider, db };

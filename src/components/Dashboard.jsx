@@ -82,6 +82,7 @@ export default function Dashboard() {
       description: "Share your travel experiences to help others.",
       buttonText: "Leave Review",
       // No route specified
+      route: "/feedback", // Example route
       theme: {
         from: "from-amber-50",
         to: "to-amber-100",
