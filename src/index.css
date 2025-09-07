@@ -88,3 +88,39 @@ body {
     animation: fly 3s ease-in-out infinite;
   }
 } */
+
+/* Add to src/index.css */
+
+/* Keyframe for pulsating map dots */
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Keyframe for skeleton loader */
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Add animation classes to Tailwind's utility classes */
+@layer utilities {
+  .animate-pulse-dot {
+    animation: pulse-dot 2s infinite ease-in-out;
+  }
+  .animate-skeleton {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+}

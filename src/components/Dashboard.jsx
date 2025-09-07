@@ -64,6 +64,7 @@ export default function Dashboard() {
       title: "Street Preview",
       description: "Virtually explore your destination before you arrive.",
       buttonText: "Start Exploring",
+      route: "/streetpreview",
       // No route specified for this one, so the button will be disabled
       theme: {
         from: "from-teal-50",

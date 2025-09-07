@@ -107,6 +107,7 @@ import Navbar from "./components/Navbar";
 import HotelBooking from "./components/HotelBooking";
 import Transportation from './components/Transportation';
 import ItineraryPlanner from "./components/ItineraryPlanner";
+import StreetPreview from "./components/StreetPreview";
 
 // --- Helper Components (No changes needed here) ---
 
@@ -178,10 +179,9 @@ function App() {
         <Route path="/hotelbooking" element={<HotelBooking />} />
         <Route path="/transportation" element={<Transportation />} />
         <Route path="/planner" element={<ItineraryPlanner />} />
+        <Route path="/streetpreview" element={<StreetPreview />} />
 
-
-
-
+        
         {/* Fallback route to redirect any invalid URL */}
         {/* <Route path="*" element={<Navigate to="/" replace />} /> */}
       </Routes>
